@@ -1,0 +1,61 @@
+body {
+    background-color: #fbefef;
+}
+
+.Sign-in-page {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 500px;
+    border: 9px solid white;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.title {
+    padding-top: 20px;
+    font-family: 'Lora', serif;
+}
+
+.title-sign-in {
+    text-decoration: solid;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 25px;
+    text-decoration: underline;
+}
+
+.sign-in {
+    border: 1px solid black;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    width: 100px;
+    height: 40px;
+}
+
+.sign-in::placeholder {
+    font-family: 'Libre Baskerville', serif;
+}
+
+.square {
+    width  : 300px;
+    height : 40px;
+    background : white;
+}
+
+.square:hover {
+    border: 2px solid #fcc995;
+}
+
+input:focus {
+    outline: none;
+}
+
+.characters-minimum {
+    font-size: 12px;
+}
