@@ -1,0 +1,58 @@
+body {
+    background: linear-gradient(90deg, #572d8a,#008ac5,#72cec4);
+    height: 100%;
+}
+
+.plus {
+    margin-left: 20px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 70%;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.create-task {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 500px;
+    border: 9px solid white;
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.square {
+    margin-top: 30px;
+    margin-left: 70px;
+    width  : 500px;
+    height : 50px;
+    background : white;
+}
+
+.enter-task {
+    margin-bottom: 70px;
+}
+
+.print-task {
+    margin-top: 0px;
+    margin-left: 70px;
+    margin-bottom: 30px;
+    width  : 500px;
+    height : 50px;
+    background: #e3fdff;
+    border: 2px solid black;
+    border-radius: 30px;
+    /* position: absolute; */
+    top: 50%;
+    left: 50%;
+    transform: translate(102%, 600%);
+}
