@@ -1,44 +1,48 @@
 body {
-    background: linear-gradient(90deg, #572d8a,#008ac5,#72cec4);
-    height: 100%;
+    background: linear-gradient(90deg, #572d8a, #008ac5, #72cec4);
+    height: 100vh;
     box-sizing: border-box;
 }
 
 .plus {
-    margin-left: 20px;
+    margin-left: 2%;
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    border-radius: 70%;
+    width: 8vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
+    height: 8vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
+    max-width: 50px; /* Limite la largeur maximale de l'élément */
+    max-height: 50px; /* Limite la hauteur maximale de l'élément */
+    border-radius: 50%; /* Utilisation de 50% pour obtenir un cercle */
     background-color: blue;
     color: white;
-    font-size: 20px;
+    font-size: 2vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
     text-align: center;
     line-height: 40px;
     cursor: pointer;
 }
 
+
 .create-task {
     background-color: white;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    height: 300px;
+    width: 40%;
+    height: 40%;
+    max-width: 700px;
     border: 9px solid white;
     border-radius: 24px;
-    padding: 50px;
+    padding: 5%;
 }
 
 .square {
-    margin-left: 70px;
-    width  : 500px;
-    height : 50px;
+    margin-left: 10%;
+    width: 80%;
+    height: 50px;
     padding-left: 30px;
     border: 2px solid white;
     border-radius: 24px;
-    background-color: #DCDCDC;
+    background-color: #dcdcdc;
     font-weight: 14px;
 }
 
@@ -46,26 +50,19 @@ body {
     margin: 20px;
 }
 
-.print-task {
+/* .print-task {
     margin-top: 0px;
-    margin-left: 70px;
+    margin-left: 10%;
     margin-bottom: 30px;
-    width  : 500px;
-    height : 50px;
+    width: 80%;
+    height: 50px;
     background: #e3fdff;
     border: 2px solid black;
     border-radius: 30px;
-    top: 50%;
+    position: absolute;
+    bottom: 10%;
     left: 50%;
-    transform: translate(102%, 600%);
-}
-
-/* .print_hour {
-    margin-left: 100px;
-}
-
-.heure-color {
-    color: red;
+    transform: translateX(-50%);
 } */
 
 .task-text {
@@ -80,7 +77,7 @@ ul li {
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
-    margin-left: 30px;
+    margin-left: 4%;
     user-select: none;
     cursor: pointer;
     position: relative;
@@ -97,7 +94,6 @@ ul li::before {
     background-position: center;
     top: 12px;
     left: 8px;
-
 }
 
 ul li.checked {
@@ -111,7 +107,7 @@ ul li.checked::before {
 
 ul li span {
     position: absolute;
-    right: 60px;
+    right: 1%;
     top: 5px;
     width: 40px;
     height: 40px;
@@ -127,4 +123,26 @@ ul li span:hover {
 
 .fa-trash {
     padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .create-task {
+        width: 90%;
+        height: 80%;
+        padding: 3%;
+    }
+
+    .square {
+        margin-left: 10%;
+        width: 90%;
+    }
+
+    .print-task {
+        width: 90%;
+        bottom: 5%;
+    }
+
+    .task-text {
+        font-size: 24px;
+    }
 }
