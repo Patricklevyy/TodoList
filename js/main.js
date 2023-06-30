@@ -1,36 +1,75 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Obtenez les références des éléments HTML nécessaires
-  var plusButton = document.querySelector(".plus");
-  var inputField = document.querySelector("#name");
+// function afficherHeure() {
+//   var date = new Date();
+//   var options = { hour: 'numeric', minute: 'numeric' };
+//   var heureActuelle = date.toLocaleTimeString(undefined, options);
 
-  // Ajoutez un gestionnaire d'événement au clic sur le bouton "+"
-  plusButton.addEventListener("click", function () {
-    // Récupérez la valeur de l'entrée de texte
-    var taskName = inputField.value;
+//   return heureActuelle;
+// }
 
-    // Vérifiez si le champ d'entrée est vide
-    if (taskName !== "") {
-      // Créez un nouvel élément de section pour la tâche
-      var taskSection = document.createElement("section");
-      taskSection.className = "print-task";
+// document.addEventListener("DOMContentLoaded", function () {
+//   var plusButton = document.querySelector(".plus");
+//   var inputField = document.querySelector("#name");
+//   var houre_style = document.querySelector(".print_hour");
 
-      // Créez un nouvel élément de paragraphe pour afficher le contenu de la tâche
-      var taskParagraph = document.createElement("p");
-      taskParagraph.textContent = taskName;
-      taskParagraph.style.marginLeft = "20px";
+//   plusButton.addEventListener("click", function () {
+//     var taskName = inputField.value;
 
+//     if (taskName !== "") {
+//       var taskSection = document.createElement("section");
+//       taskSection.className = "print-task";
 
-      // Ajoutez le paragraphe à la section de tâche
-      taskSection.appendChild(taskParagraph);
+//       var taskParagraph = document.createElement("p");
+//       var heureMarquage = afficherHeure();
+//       taskParagraph.textContent = taskName + " (" + heureMarquage + ")";
+//       taskParagraph.style.marginLeft = "20px";
+//       taskParagraph.className = "heure-color"; // Ajout de la classe CSS
 
-      // Obtenez la référence de la section "create-task"
-      var createTaskSection = document.querySelector(".create-task");
+//       taskSection.appendChild(taskParagraph);
 
-      // Insérez la nouvelle section de tâche après la section "create-task"
-      createTaskSection.parentNode.insertBefore(taskSection, createTaskSection.nextSibling);
+//       var createTaskSection = document.querySelector(".create-task");
+//       createTaskSection.parentNode.insertBefore(taskSection, createTaskSection.nextSibling);
 
-      // Effacez le contenu de l'entrée de texte
-      inputField.value = "";
-    }
-  });
-});
+//       inputField.value = "";
+//     }
+//   });
+// });
+
+const inputBox = document.getElementById("input-box");
+const listContainer = document.getElementById("list-container");
+
+function addTask() {
+  if (inputBox.value === '') {
+    alert("You must write a task!");
+  }
+  else {
+    let li = document.createElement("li");
+    li.innerHTML = inputBox.value;
+    listContainer.appendChild(li);
+    let span = document.createElement("span");
+    span.innerHTML = '<i class="fas fa-trash"></i>';
+    li.appendChild(span);
+
+  }
+  inputBox.value = "";
+  saveData();
+}
+
+listContainer.addEventListener("click", function(e){
+  if (e.target.tagName === "LI") {
+    e.target.classList.toggle("checked");
+    saveData();
+  } else if (e.target.tagName === "SPAN") {
+    e.target.parentElement.remove();
+    saveData();
+  }
+}, false);
+
+function saveData(){
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+
+function showTAsk() {
+  listContainer.innerHTML = localStorage.getItem("data");
+}
+
+showTAsk();
