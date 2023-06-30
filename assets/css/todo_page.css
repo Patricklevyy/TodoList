@@ -7,14 +7,14 @@ body {
 .plus {
     margin-left: 2%;
     display: inline-block;
-    width: 8vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
-    height: 8vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
-    max-width: 50px; /* Limite la largeur maximale de l'élément */
-    max-height: 50px; /* Limite la hauteur maximale de l'élément */
-    border-radius: 50%; /* Utilisation de 50% pour obtenir un cercle */
+    width: 8vw;
+    height: 8vw;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
     background-color: blue;
     color: white;
-    font-size: 2vw; /* Utilisation de l'unité vw pourcentage de la largeur de la fenêtre */
+    font-size: 2vw;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
